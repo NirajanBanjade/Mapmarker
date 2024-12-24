@@ -12,4 +12,8 @@
     box-sizing: border-box; 
   }
 
-  
+
+.header-text{
+    color: green;
+    font-size: 2rem;
+}
