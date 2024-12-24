@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import  Map from './components/Mappage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TextLinkExample from './components/Navbar';
+import Navmap from './components/Navmap';
 
 function App() {
   return (
@@ -16,8 +17,10 @@ function App() {
       <TextLinkExample/>
       <Routes>
       <Route path="/home" element={<Homepage />} />
-      <Route path="/mapview" element={<Map/>} />
+      <Route path="/mapview" element={<Navmap/>} />
+
       </Routes>
+
     </Router>
   );
 }

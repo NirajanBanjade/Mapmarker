@@ -51,8 +51,9 @@ const Map = () => {
   return (
     <div
       ref={mapRef}
-      style={{ width: "60%", height: "500px" }} // Set the map's size
-    ></div>
+      style={{ width: "100%", height: "500px" }} // Set the map's size
+    >
+    </div>
   );
 };
 
