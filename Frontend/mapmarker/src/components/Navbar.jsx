@@ -9,7 +9,7 @@ function TextLinkExample() {
         <Nav.Link href="/home">Homepage</Nav.Link>
       </Nav.Item>
       <Nav.Item style={{padding:"5px 10px 5px 20px"}}>
-        <Nav.Link eventKey="link-1">Map-View</Nav.Link>
+        <Nav.Link href="/mapview">Map-View</Nav.Link>
       </Nav.Item>
     </Nav>
   );

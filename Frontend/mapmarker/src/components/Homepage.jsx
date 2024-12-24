@@ -8,7 +8,6 @@ import parkingLotImage from '../pictures/parking-lot.png';
 const Homepage = () => {
   return (
     <>
-      <TextLinkExample />
       <div className="header1">
         <h1 id="topheader">Worrying about your car in parking?</h1>
         <p className='header-text' >Say no more!</p>
