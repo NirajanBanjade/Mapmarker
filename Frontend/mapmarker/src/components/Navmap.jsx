@@ -3,6 +3,28 @@ import Map from './Mappage';
 
 const Navmap = () => {
   const [isTracking, setIsTracking] = useState(false);
+  const [markers, setMarkers] = useState([]); 
+
+  function updatemarker(){
+    console.log("Mark Location button clicked"); 
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((position)=>{
+          const { latitude, longitude } = position.coords;
+
+          // Example: Log the values to verify
+          console.log("Latitude:", latitude, "Longitude:", longitude);
+
+          setMarkers((prevMarkers) => [...prevMarkers, { lat: latitude, lng: longitude }, ]);
+          console.log("Latitude:", latitude, "Longitude:", longitude);
+        },
+        (error) => {
+          console.error("Error getting location:", error);
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by your browser.");
+    }
+  }
 
   return (
     <div>
@@ -28,8 +50,8 @@ const Navmap = () => {
                 <i className={`bi ${isTracking ? 'bi-stop-circle' : 'bi-play-circle'} me-2`}></i>
                 {isTracking ? 'Stop' : 'Start'}
               </button>
-              <button className="btn btn-primary">
-                <i className="bi bi-geo-alt me-2"></i>
+              <button className="btn btn-primary" onClick={updatemarker}>
+                {/* <i className="bi bi-geo-alt me-2"></i> */}
                 Mark Location
               </button>
               <button className="btn btn-secondary">
@@ -44,7 +66,7 @@ const Navmap = () => {
             <div className="card shadow-sm">
               <div className="card-body">
                 <div style={{ width: "100%", height: '500px', backgroundColor: '#f8f9fa' }} className="rounded">
-                  <Map/>
+                  <Map markers={markers}/>
                 </div>
               </div>
             </div>
