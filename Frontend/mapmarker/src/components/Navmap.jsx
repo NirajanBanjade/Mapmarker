@@ -4,6 +4,7 @@ import Map from './Mappage';
 const Navmap = () => {
   const [isTracking, setIsTracking] = useState(false);
   const [markers, setMarkers] = useState([]); 
+  const [mark,setMark]=useState(0);
 
   function updatemarker(){
     console.log("Mark Location button clicked"); 
@@ -16,6 +17,8 @@ const Navmap = () => {
 
           setMarkers((prevMarkers) => [...prevMarkers, { lat: latitude, lng: longitude }, ]);
           console.log("Latitude:", latitude, "Longitude:", longitude);
+          setMark((prevMark) => prevMark + 1);
+
         },
         (error) => {
           console.error("Error getting location:", error);
@@ -25,6 +28,8 @@ const Navmap = () => {
       alert("Geolocation is not supported by your browser.");
     }
   }
+
+
 
   return (
     <div>
@@ -98,7 +103,7 @@ const Navmap = () => {
               <div className="card-body text-center">
                 <i className="bi bi-geo fs-1 text-primary mb-2"></i>
                 <h5 className="card-title">Markers</h5>
-                <p className="h2">0</p>
+                <p className="h2" >{mark}</p>
               </div>
             </div>
           </div>
