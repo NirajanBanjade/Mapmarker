@@ -1,0 +1,19 @@
+
+#topheader{
+    text-decoration: solid;
+    font-style: oblique;
+    font-style: oblique;
+    padding: 10px 20px; 
+    border-top: 2px solid #333; 
+    border-bottom: 2px solid #333; 
+    margin: 0; 
+    text-align: center; 
+    width: 100%; 
+    box-sizing: border-box; 
+  }
+
+
+.header-text{
+    color: green;
+    font-size: 2rem;
+}
