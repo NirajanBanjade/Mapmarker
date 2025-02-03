@@ -9,17 +9,14 @@ import Navmap from './components/Navmap';
 
 function App() {
   return (
-    // <div className="App">
-    //  <Homepage/>
-    //  <Map/>
-    // </div>
     <Router>
       <TextLinkExample/>
       <Routes>
-      <Route path="/home" element={<Homepage />} />
-      <Route path="/mapview" element={<Navmap/>} />
+  <Route path="/" element={<Homepage />} />  {/* Default Route */}
+  <Route path="/home" element={<Homepage />} />
+  <Route path="/mapview" element={<Navmap />} />
+</Routes>
 
-      </Routes>
 
     </Router>
   );

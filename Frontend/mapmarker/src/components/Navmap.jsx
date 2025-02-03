@@ -28,7 +28,14 @@ const Navmap = () => {
       alert("Geolocation is not supported by your browser.");
     }
   }
+  
+  function clear(){
+    setMark(0);
+  }
 
+  function start(){
+    
+  }
 
 
   return (
@@ -59,7 +66,7 @@ const Navmap = () => {
                 {/* <i className="bi bi-geo-alt me-2"></i> */}
                 Mark Location
               </button>
-              <button className="btn btn-secondary">
+              <button className="btn btn-secondary" onClick={clear}>
                 <i className="bi bi-trash me-2"></i>
                 Clear
               </button>
