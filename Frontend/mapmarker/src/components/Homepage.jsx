@@ -9,7 +9,7 @@ const Homepage = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       {/* Navbar */}
-      {/* <TextLinkExample /> */}
+      <TextLinkExample />
 
       {/* Header/Hero Section */}
       <header className="bg-primary text-white py-5">

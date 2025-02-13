@@ -1,0 +1,6 @@
+.capsule{
+    display:flex;
+}
+.form, .form-side{
+    border:2px solid white;
+}

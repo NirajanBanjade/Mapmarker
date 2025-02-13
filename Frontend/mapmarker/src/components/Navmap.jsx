@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Map from './Mappage';
+import TextLinkExample from './Navbar';
 
 const Navmap = () => {
   const [isTracking, setIsTracking] = useState(false);
@@ -53,7 +54,7 @@ const Navmap = () => {
 
   return (
     <div>
-      {/* Navbar */}
+      <TextLinkExample/>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand" href="#">Location Tracker</a>
