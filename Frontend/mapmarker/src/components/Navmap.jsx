@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import Map from './Mappage';
+import TextLinkExample from './Navbar';
 
 const Navmap = () => {
   const [isTracking, setIsTracking] = useState(false);
   const [markers, setMarkers] = useState([]); 
   const [mark,setMark]=useState(0);
 
-  function updatemarker(){
-    console.log("Mark Location button clicked"); 
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition((position)=>{
+  function updatemarker() {
+    console.log("Mark Location button clicked");
+  
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
           const { latitude, longitude } = position.coords;
-
-          // Example: Log the values to verify
-          console.log("Latitude:", latitude, "Longitude:", longitude);
-
-          setMarkers((prevMarkers) => [...prevMarkers, { lat: latitude, lng: longitude }, ]);
-          console.log("Latitude:", latitude, "Longitude:", longitude);
-          setMark((prevMark) => prevMark + 1);
-
+  
+          // Check if a marker already exists at this location
+          const isDuplicate = markers.some(
+            (marker) => marker.lat === latitude && marker.lng === longitude
+          );
+  
+          if (!isDuplicate) {
+            setMarkers((prevMarkers) => [
+              ...prevMarkers,
+              { lat: latitude, lng: longitude },
+            ]);
+  
+            setMark((prevMark) => prevMark + 1);
+  
+            console.log("New Marker Added at:", latitude, longitude);
+          } else {
+            console.log("Marker already exists at this location:", latitude, longitude);
+          }
         },
         (error) => {
           console.error("Error getting location:", error);
@@ -28,6 +41,7 @@ const Navmap = () => {
       alert("Geolocation is not supported by your browser.");
     }
   }
+  
   
   function clear(){
     setMark(0);
@@ -40,7 +54,7 @@ const Navmap = () => {
 
   return (
     <div>
-      {/* Navbar */}
+      <TextLinkExample/>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <a className="navbar-brand" href="#">Location Tracker</a>
