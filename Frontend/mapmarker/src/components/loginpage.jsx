@@ -3,7 +3,7 @@ import './loginpage.css';
 import { useNavigate } from "react-router-dom";
 
 
-const Login=()=>{
+const Login=({setIsAuthenticated})=>{
     const [user,setuser]=useState('username');
     const [pass,setpass]=useState('password');
     const navigate = useNavigate();
@@ -13,6 +13,7 @@ const Login=()=>{
         const required_pass="Banjade";
         if(user===required_user && pass===required_pass){
             localStorage.setItem("auth", "true");
+            setIsAuthenticated(true);
             navigate('/home');
         }
         else{

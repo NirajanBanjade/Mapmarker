@@ -4,3 +4,123 @@
 .form, .form-side{
     border:2px solid white;
 }
+.capsule {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Main form section */
+.form {
+    padding: 40px;
+    width: 60%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.2);
+}
+
+/* Login section */
+.login {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #357abd;
+}
+
+#forgot {
+    color: #4a90e2;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0;
+}
+
+/* Side section */
+.form-side {
+    background: linear-gradient(135deg, #4a90e2, #357abd);
+    width: 40%;
+    padding: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#welcome {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#account {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+#signup {
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .capsule {
+        flex-direction: column;
+        margin: 20px;
+    }
+    
+    .form, .form-side {
+        width: 100%;
+    }
+}
