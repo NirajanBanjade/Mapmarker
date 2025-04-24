@@ -27,9 +27,9 @@ const Login=({setIsAuthenticated})=>{
         <div className="form">
             <form>
                 <label>UserName</label>
-                <input type="text" onChange={(e)=>setuser(e.target.value)}/>
+                <input type="text" placeholder="Nirajan" onChange={(e)=>setuser(e.target.value)}/>
                 <label>Password</label>
-                <input type="password" onChange={(e)=>setpass(e.target.value)}/>
+                <input type="password" placeholder="Banjade" onChange={(e)=>setpass(e.target.value)}/>
             </form>
             <div className="login">
             <button onClick={handleforlogin}>Login</button>
